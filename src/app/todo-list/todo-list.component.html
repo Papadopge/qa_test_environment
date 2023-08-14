@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>Todo App</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" href="todos.css" type="text/css" media="screen" charset="utf-8"> -->
+</head>
+
+<body>
+  <div class="container">
+    <h2>My To-Do List</h2>
+    <input type="text" [(ngModel)]="newTask" placeholder="Enter a new task">
+    <button (click)="addTask()">Add Task</button>
+    <div class="task" *ngFor="let task of tasks; let i = index">
+      {{ task }}
+      <button (click)="completeTask(i)">Complete</button>
+    </div>
+
+    <div class="completed-tasks">
+      <h3>Completed Tasks</h3>
+      <div class="task" *ngFor="let task of completedTasks; let i = index">
+        {{ task }} <button (click)="removeCompletedTask(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="settings-container">
+    <h2>Settings Simulator</h2>
+    <div *ngFor="let setting of settings" class="setting-item">
+      <label>
+        <input type="checkbox" [(ngModel)]="setting.isEnabled" (change)="toggleSetting(setting)">
+        {{ setting.name }}
+      </label>
+    </div>
+  </div>
+</div>

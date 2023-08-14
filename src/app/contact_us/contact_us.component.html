@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Signin Template for Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="contactus.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="row">
+          <div class="alert alert-success" role="alert" *ngIf="showAlert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit
+              longer so
+              that you can see how spacing within an alert works with this kind of content.</p>
+            <hr>
+            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+          </div>
+          <form class="form-contactus" (ngSubmit)="onSubmitClick()" #contactUsForm="ngForm">
+            <!-- ... other form fields ... -->
+            <h1 class="h3 mb-3 font-weight-normal">Contact Us</h1>
+            <!-- First Name input with validation -->
+            <input type="firstName" id="inputFirstName" class="form-control" placeholder="First Name" required
+              [(ngModel)]="firstName" name="firstName" #firstNameInput="ngModel" autofocus>
+            <div *ngIf="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched)"
+              class="alert alert-danger">
+              <div *ngIf="firstNameInput.errors?.['required']">First Name is required.</div>
+            </div>
+            <!-- Last Name input with validation -->
+            <input type="last-name" id="inputLastName" class="form-control" placeholder="Last Name" required
+              [(ngModel)]="lastName" name="lastName" #lastNameInput="ngModel" autofocus>
+            <div *ngIf="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)"
+              class="alert alert-danger">
+              <div *ngIf="lastNameInput.errors?.['required']">Last Name is required.</div>
+            </div>
+            <!-- Email input with validation -->
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+              [(ngModel)]="email" name="email" #emailInput="ngModel" autofocus>
+            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+              <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+              <div *ngIf="emailInput.errors?.['email']">Invalid email format.</div>
+            </div>
+            <!-- Password input with validation -->
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+              [(ngModel)]="password" name="password" #passwordInput="ngModel">
+            <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)"
+              class="alert alert-danger">
+              <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+            </div>
+            <div>
+              <textarea name="message" class="feedback-input" placeholder="Comments"></textarea><br>
+            </div>
+            <!-- ... other form elements ... -->
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+
+            <button [disabled]="contactUsForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Sign
+              in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
