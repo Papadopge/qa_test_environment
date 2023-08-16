@@ -1,4 +1,7 @@
 # qa_test_environment
+You can navigate through:
+http://georgiapapadopoulou.eu.185-25-20-64.linux11.name-servers.gr/home.html
+
 Creating a test sample site with functionalities is invaluable for a QA automation engineer as it offers a controlled and realistic environment for testing, allowing accurate simulation of user interactions and scenarios. This dedicated platform enables tailored testing of specific scenarios, facilitates rapid iteration, enhances test data management, and serves as a valuable learning and collaboration resource, ultimately leading to higher quality software and more efficient testing processes.
 
 This test page has been designed with Angular, HTML, CSS for testing purposes.
